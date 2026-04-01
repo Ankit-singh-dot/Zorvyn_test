@@ -31,11 +31,11 @@ export default function TransactionsPage() {
         <div className="flex items-center gap-2">
           {role === "admin" && (
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-1.5">
-                  <HiOutlineArrowDownTray className="w-4 h-4" />
-                  Export
-                </Button>
+              <DropdownMenuTrigger
+                render={<Button variant="outline" size="sm" className="gap-1.5" />}
+              >
+                <HiOutlineArrowDownTray className="w-4 h-4" />
+                Export
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem onClick={() => exportToCSV(transactions)}>
