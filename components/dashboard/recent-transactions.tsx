@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { useFinanceStore } from "@/lib/store";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { CATEGORY_COLORS, CATEGORY_ICONS } from "@/lib/data";
@@ -25,11 +24,12 @@ export function RecentTransactions() {
         <CardTitle className="text-base font-semibold">
           Recent Transactions
         </CardTitle>
-        <Button variant="ghost" size="sm" className="text-xs gap-1.5" asChild>
-          <Link href="/dashboard/transactions">
-            View all <HiOutlineArrowRight className="w-3 h-3" />
-          </Link>
-        </Button>
+        <Link 
+          href="/dashboard/transactions"
+          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          View all <HiOutlineArrowRight className="w-3 h-3" />
+        </Link>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-1">
