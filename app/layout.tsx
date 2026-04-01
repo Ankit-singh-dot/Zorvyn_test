@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner";
+import { CustomToaster } from "@/components/layout/custom-toaster";
 import "./globals.css";
 import { ThemeWrapper } from "@/components/layout/theme-wrapper";
 
@@ -31,10 +31,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeWrapper>
-          <TooltipProvider delayDuration={200}>
+          <TooltipProvider delay={200}>
             {children}
           </TooltipProvider>
-          <Toaster richColors position="bottom-right" />
+          <CustomToaster />
         </ThemeWrapper>
       </body>
     </html>
