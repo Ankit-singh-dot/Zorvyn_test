@@ -75,11 +75,9 @@ export function AddTransactionDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button size="sm" className="gap-1.5">
+      <DialogTrigger render={<Button size="sm" className="gap-1.5" />}>
           <HiOutlinePlus className="w-4 h-4" />
           Add Transaction
-        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[440px]">
         <DialogHeader>
