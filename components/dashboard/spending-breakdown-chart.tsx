@@ -68,7 +68,8 @@ export function SpendingBreakdownChart() {
                     boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                     padding: "10px 14px",
                   }}
-                  formatter={(value: number) => [formatCurrency(value)]}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  formatter={((value: any) => [formatCurrency(Number(value))]) as any}
                   labelStyle={{ color: "hsl(0, 0%, 90%)", fontSize: "13px", fontWeight: 600 }}
                 />
               </PieChart>
