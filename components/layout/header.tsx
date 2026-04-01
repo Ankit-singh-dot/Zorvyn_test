@@ -55,10 +55,8 @@ export function Header() {
     <header className="sticky top-0 z-30 flex items-center gap-4 h-16 px-4 lg:px-6 border-b border-border bg-background/80 glass">
       {/* Mobile Menu */}
       <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="lg:hidden">
+        <SheetTrigger render={<Button variant="ghost" size="icon" className="lg:hidden" />}>
             <HiOutlineBars3 className="w-5 h-5" />
-          </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-[280px] p-0">
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
